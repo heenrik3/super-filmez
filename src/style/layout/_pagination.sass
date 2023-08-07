@@ -1,0 +1,65 @@
+.pagination
+    margin-bottom: 2rem
+    font-weight: bold
+
+    display: flex
+    justify-content: flex-end
+    gap: 2rem
+
+    &__pages, &__posts
+        padding: .5rem
+        @include default-b-radius
+
+    &__posts
+        display: flex
+        align-items: center
+        gap: 2rem
+
+        & label
+            height: 2.5rem
+            display: flex
+            align-items: center
+
+        & select
+            padding: 5px
+            height: 2.5rem
+            border: none
+            @include default-b-radius
+            
+            display: flex
+            align-items: center
+            justify-content: center
+
+            color: inherit
+            font-family: inherit
+            font-weight: inherit
+            font-size: inherit
+
+            @include respond(phone)
+                height: fit-content
+
+    &__pages
+        height: auto
+
+        display: flex
+        align-items: center
+        gap: 1rem
+
+        @include respond(phone)
+            min-width: 10rem
+    &__btn
+        height: 2.5rem
+        width: 2.5rem
+        @include default-b-radius
+
+        display: flex
+        align-items: center
+        justify-content: center
+
+        &:disabled
+            cursor: not-allowed
+            opacity: .2
+
+        @include respond(phone)
+            height: 100%
+            width: 100%

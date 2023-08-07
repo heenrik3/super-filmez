@@ -1,0 +1,34 @@
+.header
+    padding: 1rem 2rem
+    width: 100%
+    z-index: 5
+
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+
+    position: fixed
+
+    & .navbar
+        display: flex
+        gap: 2rem
+
+        &__btn
+            padding: 1rem 1.5rem
+            min-width: 5rem
+            @include default-b-radius
+
+            display: flex
+            align-items: center
+            justify-content: center
+
+            font-weight: bold
+
+            &:active, &:focus, &:hover
+                transform: translateY(-2px) scale(102%)
+
+        &__link
+            height: 100%
+            width: 100%
+            

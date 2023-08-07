@@ -1,0 +1,140 @@
+.movie
+
+    &__picture
+        height: 60rem
+        width: 100%
+        @include default-b-radius
+        overflow: hidden
+
+        position: relative
+
+        animation: moveInLeft 1s 
+        animation-fill-mode: backwards
+        
+    &__img
+        height: 100%
+        width: 100%
+        object-fit: cover
+        pointer-events: none
+
+    &__back
+        padding: 1rem 2rem
+        margin: 2rem
+        border: 2px solid transparent
+        border-radius: 3rem
+        position: absolute
+        background-color: transparent
+        backdrop-filter: blur(15px)
+        color: white
+        font-size: 2rem
+        font-weight: bold
+
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 1rem
+
+        &:focus, &:hover, &:active
+            outline: none
+            border: 2px solid white
+            padding: 1rem 3rem
+        
+        @include respond(phone)
+            padding: 1rem 1.5rem
+            font-size: inherit
+
+    &__name
+        pointer-events: none
+
+    &__info
+        padding: 2rem
+        font-size: 1.8rem
+
+        display: flex
+        flex-direction: column
+        
+        gap: 2rem
+
+        animation: moveInLeft 1.5s
+
+    &__description
+        text-align: justify
+
+    &__extras
+        display: flex
+        flex-wrap: wrap
+        gap: 1rem
+
+
+    &__tags
+        display: flex
+        flex-wrap: wrap
+        gap: 1rem
+
+    &__tag
+        padding: .5rem 1.5rem
+        @include default-b-radius
+        
+
+    &__rating
+        display: flex
+        align-items: center
+        gap: .5rem
+
+        & i
+            font-size: 1.4rem
+            color: red
+
+        & span
+            font-size: 2rem
+            font-weight: bold
+
+        & span span
+            font-size: 1.4rem
+
+    &__posters, &__cast
+
+        display: flex
+        flex-direction: column
+        gap: 1rem
+
+        & .posters
+            display: flex
+            flex-wrap: wrap
+            gap: 1rem
+
+            &__picture
+                height: 15rem
+                width: 25rem
+                @include default-b-radius
+                overflow: hidden
+
+                @include respond(phone)
+                    width: 100%
+
+                &:hover, &:focus
+                    & .posters__img
+                        transform: scale(105%)
+
+            &__img
+                height: 100%
+                width: 100%
+                object-fit: cover
+
+        & .cast
+            display: flex
+            flex-wrap: wrap
+            gap: 1rem
+    
+            &__picture
+                height: 5rem
+                width: 5rem
+                @include default-b-radius
+                overflow: hidden
+
+            &__img
+                height: 100%
+                width: 100%
+                object-fit: none
+    
+    

@@ -1,0 +1,38 @@
+.dark
+    background-color: $dark-color-1
+    color: $light-color-1
+
+    .header
+        background: linear-gradient(to right, $dark-color-2, $dark-color-1)
+        
+        & .navbar
+            &__btn
+                background-color: $dark-color-2
+                color: $primary-color
+
+    .pagination
+        &__posts, &__pages
+            background-color: $dark-color-2
+        
+        &__posts
+            & select
+                background-color: $dark-color-1
+
+        &__btn
+            background-color: $dark-color-1
+
+    .list
+        &-item
+            background-color: $dark-color-2
+        
+            &:active, &:hover, &:focus
+                box-shadow: 0px 3px 12px rgba($light-color-1, 0.19)
+            
+
+    .footer
+        background-color: $dark-color-2
+        border-top-color: $dark-color-1
+
+    .movie
+        &__tag
+            background-color: $dark-color-2

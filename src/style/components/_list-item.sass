@@ -1,0 +1,70 @@
+.list-item
+    @include default-b-radius
+    overflow: hidden
+    outline: none
+    position: relative
+    cursor: pointer
+
+    display: flex
+    flex-direction: column
+
+    animation: moveInLeft .5s
+    animation-fill-mode: backwards
+
+    &:before 
+        content: ''
+        position: absolute
+        top: 0
+        left: -450px
+        width: 100%
+        height: 100%
+        background: rgba(255, 255, 255, 0.3)
+        transform: skewX(-30deg)
+        transition: 0.5s
+
+    @include respond(phone)
+        display: grid
+        grid-template-columns: 1fr .5fr
+
+    &:active, &:hover, &:focus
+        transform: scale(105%)
+
+        &:before
+            left: 450px
+
+    &__picture
+        height: 45rem
+        width: 100%
+        
+        overflow: hidden
+
+        @include respond(phone)
+            height: 35rem
+
+    &__img
+        height: 100%
+        width: 100%
+        object-fit: cover
+
+    &__info
+        padding: 1.5rem
+
+        display: flex
+        flex-direction: column
+        gap: 5px
+
+        @include respond(phone)
+            font-size: 2rem
+            padding: 2rem
+
+    &__title
+        white-space: pre-wrap
+        font-weight: bold
+        line-height: 1
+        line-break: anywhere
+    
+    &__rating
+        font-size: 1.2rem
+        color: $primary-color
+
+        display: flex
