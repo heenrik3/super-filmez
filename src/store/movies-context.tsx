@@ -2,7 +2,23 @@ import { createContext, useState } from 'react'
 
 import usePagination from '../hooks/usePagination'
 
-export const MoviesContext = createContext({})
+export const MoviesContext = createContext({
+  movies: [],
+  movie: {
+    img: '',
+    name: '',
+    rating: 0,
+    genre: [],
+    director: '',
+    year: 0,
+    description: '',
+  },
+  totalMovies: 0,
+  getMovies: () => {},
+  getMovie: (id: string) => {
+    id
+  },
+})
 
 function MoviesContextProvider(props: any) {
   const [movies, setMovies] = useState([])
@@ -41,7 +57,7 @@ function MoviesContextProvider(props: any) {
     return movies.slice(start, end)
   }
 
-  const context = {
+  const context: any = {
     movies: getResultsPerPage(),
     movie,
     totalMovies: movies.length,

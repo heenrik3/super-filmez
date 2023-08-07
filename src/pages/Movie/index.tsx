@@ -63,7 +63,7 @@ function Movie() {
             <div className="cast">
               {Array(4)
                 .fill(1)
-                .map((item, i) => (
+                .map((_, i) => (
                   <picture className="cast__picture" key={i}>
                     <img className="cast__img" src={movie.img} />
                   </picture>
@@ -82,7 +82,7 @@ function Movie() {
             <div className="posters">
               {Array(4)
                 .fill(1)
-                .map((item, i) => (
+                .map((_, i) => (
                   <picture className="posters__picture" key={i}>
                     <img className="posters__img" src={movie.img} />
                   </picture>
