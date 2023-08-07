@@ -4,8 +4,12 @@ export const PaginationContext = createContext({
   page: 0,
   resultsPerPage: 0,
   postsPerPage: [],
-  handlePageChanges: (direction: string) => {},
-  handlePostsPerPageChanges: (value: number) => {},
+  handlePageChanges: (direction: string) => {
+    direction
+  },
+  handlePostsPerPageChanges: (value: number) => {
+    value
+  },
 })
 
 function PaginationProvider(props: any) {
