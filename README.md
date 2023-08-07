@@ -1,27 +1,15 @@
-# React + TypeScript + Vite
+# Super Filmez
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Super Filmez](https://i.imgur.com/WKc4RPA.png)
 
-Currently, two official plugins are available:
+## 🚀 Descrição
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Projeto web desenvolvido e composto por Python e FastAPI Back-End e ReactJS + TypeScript Front-End.
 
-## Expanding the ESLint configuration
+Deploy utilizando Vercel e Cyclic.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Possui animações, temas claro ou escuro automático e também selecionável.
 
-- Configure the top-level `parserOptions` property like this:
+OBS: Ainda em desenvolvimento.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+ Acesse aqui: [Super Filmez](https://super-movies.vercel.app)
