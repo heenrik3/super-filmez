@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Spinner from '../../components/Spinner'
 import Layout from '../../components/Layout'
@@ -6,13 +6,23 @@ import useMovies from '../../hooks/useMovies'
 
 function Movie() {
   const { id } = useParams()
-  const { movie, getMovie } = useMovies()
+  const { getMovie } = useMovies()
+  const [movie, setMovie] = useState({
+    img: '',
+    name: '',
+    rating: 0,
+    genre: [],
+    director: '',
+    year: 0,
+    description: '',
+  })
 
   useEffect(() => {
-    getMovie(id ? id : '')
+    window.scrollTo(0, 0)
+    getMovie(id ? id : '', setMovie)
   }, [id])
 
-  if (!movie)
+  if (!movie.name)
     return (
       <Layout>
         <Spinner />

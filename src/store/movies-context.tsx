@@ -4,25 +4,16 @@ import usePagination from '../hooks/usePagination'
 
 export const MoviesContext = createContext({
   movies: [],
-  movie: {
-    img: '',
-    name: '',
-    rating: 0,
-    genre: [],
-    director: '',
-    year: 0,
-    description: '',
-  },
   totalMovies: 0,
   getMovies: () => {},
-  getMovie: (id: string) => {
+  getMovie: (id: string, handler: any) => {
     id
+    handler
   },
 })
 
 function MoviesContextProvider(props: any) {
   const [movies, setMovies] = useState([])
-  const [movie, setMovie] = useState()
 
   const { page, resultsPerPage } = usePagination()
 
@@ -38,12 +29,12 @@ function MoviesContextProvider(props: any) {
     }
   }
 
-  const getMovie = async (id: string) => {
+  const getMovie = async (id: string, handler: any) => {
     try {
       const response = await fetch(`${import.meta.env.VITE_API}/movies/${id}`)
       const data = await response.json()
 
-      setMovie(data.data)
+      handler(data.data)
       return true
     } catch (error) {
       return false
@@ -59,7 +50,6 @@ function MoviesContextProvider(props: any) {
 
   const context: any = {
     movies: getResultsPerPage(),
-    movie,
     totalMovies: movies.length,
     getMovies,
     getMovie,
